@@ -3,6 +3,7 @@
 
 :root {
   --bg-color: #f9f7fa;
+  --footer-bg-color: #1c1b1e;
   --black-color: #000;
   --white-color: #fff;
   --text-color-light: #fff;
@@ -14,9 +15,10 @@
   --base-line-height: 120%;
   --base-letter-spacing: -9%;
   --base-font-weight: 400;
-  --header-height: #{functions.get-vw(122px)};
+  --header-height: #{functions.get-vw(98px)};
   --default-border-width: #{functions.get-vw(1px)};
   --section-padding-inline: #{functions.get-vw(90px)};
+  --header-padding-inline: #{functions.get-vw(33px)};
   --section-margin-block: #{functions.get-vw(160px)} 0 #{functions.get-vw(190px)};
   --default-transition: 0.25s;
   --link-transition: opacity 0.4s ease, transform 0.4s ease;

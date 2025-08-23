@@ -1,0 +1,38 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  gap: 11px;
+  padding: 15px 18px;
+  border-radius: 13px;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 21px;
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.contained {
+  font-weight: 700;
+  &.dark {
+    color: var(--text-color-light);
+    background: #101530;
+  }
+  &.light {
+    background: var(--white-color);
+    color: var(--black-color);
+  }
+}
+
+.outlined {
+  font-weight: 500;
+  border: var(--default-border-width) solid;
+}
+
+.link {
+}

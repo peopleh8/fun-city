@@ -1,0 +1,19 @@
+.footer {
+  .list {
+    display: flex;
+    gap: 9px;
+  }
+  .link {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    border: var(--default-border-width) solid #49494b;
+    img {
+      width: auto;
+      height: 40%;
+    }
+  }
+}

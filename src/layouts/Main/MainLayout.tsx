@@ -2,14 +2,16 @@
 
 import React, { FC } from 'react'
 import { ChildProps } from '@/types/common.types'
+import Header from '@/components/Header/Header'
+import Footer from '@/components/Footer/Footer'
 import styles from '@/layouts/Main/MainLayout.module.scss'
 
 const MainLayout: FC<ChildProps> = ({ children }) => {
   return (
     <div className={styles.wrapper}>
-      <div>Header</div>
+      <Header />
       <main className={styles.main}>{children}</main>
-      <div>Footer</div>
+      <Footer />
     </div>
   )
 }

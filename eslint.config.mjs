@@ -23,6 +23,7 @@ const eslintConfig = [
   {
     files: ["**/*.ts", "**/*.tsx"],
     rules: {
+      "react/no-children-prop": "off",
       "@typescript-eslint/no-explicit-any": "off",
     },
   },

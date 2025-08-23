@@ -1,0 +1,17 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-inline: var(--header-padding-inline);
+  position: relative;
+}
+
+.icon {
+  width: 27px;
+  height: 30px;
+  svg {
+    fill: var(--text-color-dark);
+  }
+}
