@@ -14,6 +14,7 @@ const Mission: FC = () => {
       <FeatureList>
         <FeatureCard />
         <FeatureCard />
+        <FeatureCard />
       </FeatureList>
     </Section>
   )

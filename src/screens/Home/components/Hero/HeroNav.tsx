@@ -10,42 +10,44 @@ import { ReactComponent as NavIcon4 } from '@/assets/icons/hero-nav-4.svg'
 const HeroNav: FC = () => {
   return (
     <nav className={styles.nav}>
-      <Link
-        className={styles.navItem}
-        href='#'
-      >
-        <Icon externalClassNames={styles.navIcon}>
-          <NavIcon1 />
-        </Icon>
-        <span className={styles.navText}>Values</span>
-      </Link>
-      <Link
-        className={styles.navItem}
-        href='#'
-      >
-        <Icon externalClassNames={styles.navIcon}>
-          <NavIcon2 />
-        </Icon>
-        <span className={styles.navText}>Ecosystem</span>
-      </Link>
-      <Link
-        className={styles.navItem}
-        href='#'
-      >
-        <Icon externalClassNames={styles.navIcon}>
-          <NavIcon3 />
-        </Icon>
-        <span className={styles.navText}>Philosophy</span>
-      </Link>
-      <Link
-        className={styles.navItem}
-        href='#'
-      >
-        <Icon externalClassNames={styles.navIcon}>
-          <NavIcon4 />
-        </Icon>
-        <span className={styles.navText}>Glossary</span>
-      </Link>
+      <div className={styles.navInner}>
+        <Link
+          className={styles.navItem}
+          href='#'
+        >
+          <Icon externalClassNames={styles.navIcon}>
+            <NavIcon1 />
+          </Icon>
+          <span className={styles.navText}>Values</span>
+        </Link>
+        <Link
+          className={styles.navItem}
+          href='#'
+        >
+          <Icon externalClassNames={styles.navIcon}>
+            <NavIcon2 />
+          </Icon>
+          <span className={styles.navText}>Ecosystem</span>
+        </Link>
+        <Link
+          className={styles.navItem}
+          href='#'
+        >
+          <Icon externalClassNames={styles.navIcon}>
+            <NavIcon3 />
+          </Icon>
+          <span className={styles.navText}>Philosophy</span>
+        </Link>
+        <Link
+          className={styles.navItem}
+          href='#'
+        >
+          <Icon externalClassNames={styles.navIcon}>
+            <NavIcon4 />
+          </Icon>
+          <span className={styles.navText}>Glossary</span>
+        </Link>
+      </div>
     </nav>
   )
 }

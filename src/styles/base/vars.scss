@@ -20,7 +20,7 @@
   --section-padding-inline: #{functions.get-vw(90px)};
   --header-padding-inline: #{functions.get-vw(33px)};
   --section-margin-block: #{functions.get-vw(160px)} 0 #{functions.get-vw(190px)};
-  --default-transition: 0.25s;
+  --default-transition: 0.3s;
   --link-transition: opacity 0.4s ease, transform 0.4s ease;
   --burder-transition: transform 0.3s ease;
   --fade-transition: all 0.3s ease 0s;

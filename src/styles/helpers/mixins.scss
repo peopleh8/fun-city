@@ -37,81 +37,25 @@
   }
 }
 
-@mixin btn-hoverable {
-  position: relative;
-  overflow: hidden;
-  .word {
-    display: block;
-    transition: var(--link-transition);
-    &:last-child {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      transform: translateY(100%);
+@mixin tab {
+  overflow: visible !important;
+  & > :global(.swiper-wrapper) {
+    transition-property: transform;
+    & > :global(.swiper-slide) {
       opacity: 0;
-    }
-  }
-  .icon {
-    position: relative;
-    overflow: hidden;
-    svg,
-    img {
-      transition: var(--link-transition);
-      &:first-child {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateX(-100%);
-        opacity: 0;
+      pointer-events: none;
+      transition-property: opacity;
+      transition-duration: 0.2s;
+      :global(.swiper-slide) {
+        pointer-events: auto;
       }
     }
-  }
-  @include desktop-hoverable {
-    &:hover {
-      .word {
-        &:first-child {
-          transform: translateY(-100%);
-          opacity: 0;
-        }
-        &:last-child {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-      .icon {
-        svg {
-          &:first-child {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          &:last-child {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-        }
-      }
+    & > :global(.swiper-slide.swiper-slide-active) {
+      opacity: 1;
+      pointer-events: auto;
+      transition-delay: 0.2s !important;
+      transition-duration: 0.23s !important;
+      z-index: 2;
     }
-  }
-}
-
-@mixin overlay {
-  position: fixed;
-  padding-top: var(--header-height);
-  inset: 0;
-  z-index: 999999;
-  background: rgba(6, 6, 6, 0.8);
-  backdrop-filter: blur(54px);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: all 0.6s ease;
-  &.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
   }
 }

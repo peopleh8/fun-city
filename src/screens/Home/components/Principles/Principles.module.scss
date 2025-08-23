@@ -1,0 +1,39 @@
+@use '../../../../styles/helpers/mixins';
+
+.principles {
+  gap: 50px;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+.navBtn {
+  font-weight: 500;
+  font-size: 90px;
+  line-height: 80%;
+  text-transform: capitalize;
+  opacity: 0.1;
+  transition: opacity var(--default-transition);
+  @include mixins.desktop-hoverable {
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &.active {
+    opacity: 1;
+  }
+}
+
+.body {
+  width: 100%;
+  @include mixins.tab;
+}

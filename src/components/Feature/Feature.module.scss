@@ -8,9 +8,6 @@
   .content {
     padding: 60px;
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
   }
   .inner {
     flex: 1;
@@ -45,9 +42,18 @@
 
 .card {
   background: rgba(#fff, 0.51);
+  backdrop-filter: blur(110px);
   padding: 6px;
   border-radius: 50px;
   display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .photo {

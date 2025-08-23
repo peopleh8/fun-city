@@ -1,6 +1,7 @@
 .title {
   font-weight: 600;
   line-height: 80%;
+  letter-spacing: -4px;
   em,
   i {
     font-weight: 300;
@@ -21,7 +22,7 @@
 }
 
 .lg {
-  font-size: 180px;
+  font-size: 160px;
 }
 
 .md {
@@ -30,4 +31,5 @@
 
 .sm {
   font-size: 28px;
+  letter-spacing: 0;
 }

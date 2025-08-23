@@ -29,7 +29,7 @@
   flex-direction: column;
   align-items: center;
   gap: 141px;
-  max-width: 1430px;
+  max-width: 1380px;
   width: 100%;
 }
 
@@ -61,12 +61,18 @@
 }
 
 .nav {
-  background: var(--white-color);
-  padding: 6px;
-  border: 3px solid rgba(#fcfdff, 0.1);
+  background: rgba(#fcfdff, 0.4);
+  backdrop-filter: blur(150px);
   border-radius: 13px;
-  gap: 3px;
+  padding: 3px;
+}
+
+.navInner {
+  background: var(--white-color);
+  border-radius: 13px;
   display: flex;
+  padding: 6px;
+  gap: 3px;
 }
 
 .navItem {
