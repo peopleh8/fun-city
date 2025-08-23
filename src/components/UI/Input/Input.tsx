@@ -22,6 +22,8 @@ const Input: FC<InputProps> = ({
   loading,
   register,
   errors,
+  setError,
+  setValue,
   externalClassNames,
   ...props
 }) => {

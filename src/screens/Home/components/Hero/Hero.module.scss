@@ -1,0 +1,110 @@
+@use '../../../../styles/helpers/mixins';
+
+.hero {
+  position: relative;
+  z-index: 2;
+  img,
+  video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+.content {
+  padding: var(--header-height) 16px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.inner {
+  padding-top: 424px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 141px;
+  max-width: 1430px;
+  width: 100%;
+}
+
+.topography {
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  span {
+    display: block;
+    &:first-child {
+      text-align: left;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.subtitle {
+  position: absolute;
+  z-index: 2;
+  top: 60px;
+  right: 0;
+  max-width: 320px;
+  text-indent: 55px;
+  transform: translateX(102px);
+}
+
+.nav {
+  background: var(--white-color);
+  padding: 6px;
+  border: 3px solid rgba(#fcfdff, 0.1);
+  border-radius: 13px;
+  gap: 3px;
+  display: flex;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 22px 28px;
+  border-radius: 8px;
+  transition: background var(--default-transition) ease;
+  @include mixins.desktop-hoverable {
+    &:hover {
+      background: #0b1041;
+      .navIcon svg {
+        stroke: var(--text-color-light);
+      }
+      .navText {
+        color: var(--text-color-light);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+  svg {
+    stroke: #0b1041;
+    transition: stroke var(--default-transition) ease;
+  }
+}
+
+.navText {
+  font-size: 16px;
+  line-height: 1;
+  color: #0b1041;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.69;
+  transition: all var(--default-transition) ease;
+}

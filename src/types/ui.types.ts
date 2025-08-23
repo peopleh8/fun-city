@@ -86,3 +86,63 @@ export interface LoaderProps {
   position?: 'absolute' | 'fixed' | 'static'
   externalClassNames?: ExternalClassNamesType
 }
+
+type BaseTitleProps = {
+  size?: 'xl' | 'lg' | 'md' | 'sm'
+  theme?: 'dark' | 'light'
+  externalClassNames?: ExternalClassNamesType
+}
+
+type TitleWithChildren = {
+  children: ChildType
+  content?: never
+}
+
+type TitleWithContent = {
+  children?: never
+  content: string
+}
+
+export type TitleProps = BaseTitleProps & (TitleWithChildren | TitleWithContent)
+
+type BaseSubtitleProps = {
+  size?: 'default' | 'big'
+  theme?: 'dark' | 'light'
+  externalClassNames?: ExternalClassNamesType
+}
+
+type SubtitleWithChildren = {
+  children: ChildType
+  content?: never
+}
+
+type SubtitleWithContent = {
+  children?: never
+  content: string
+}
+
+export type SubtitleProps = BaseSubtitleProps & (SubtitleWithChildren | SubtitleWithContent)
+
+type BaseArticleProps = {
+  externalClassNames?: ExternalClassNamesType
+}
+
+type ArticleWithChildren = {
+  children: ChildType
+  content?: never
+}
+
+type ArticleWithContent = {
+  children?: never
+  content: string
+}
+
+export type ArticleProps = BaseArticleProps & (ArticleWithChildren | ArticleWithContent)
+
+export interface SectionProps extends ChildProps {
+  subtitle?: string
+  title?: string
+  size?: 'xl' | 'lg' | 'md' | 'sm'
+  inlineType?: 'type-1' | 'type-2' | 'type-3'
+  externalClassNames?: ExternalClassNamesType
+}

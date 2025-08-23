@@ -5,7 +5,11 @@
   justify-content: space-between;
   gap: 16px;
   padding-inline: var(--header-padding-inline);
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .icon {

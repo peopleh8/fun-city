@@ -1,0 +1,33 @@
+.title {
+  font-weight: 600;
+  line-height: 80%;
+  em,
+  i {
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
+.dark {
+  color: var(--text-color-dark);
+}
+
+.light {
+  color: var(--text-color-light);
+}
+
+.xl {
+  font-size: 219px;
+}
+
+.lg {
+  font-size: 180px;
+}
+
+.md {
+  font-size: 79px;
+}
+
+.sm {
+  font-size: 28px;
+}

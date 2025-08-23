@@ -27,3 +27,7 @@ export interface SocialsProps {
   position: 'footer'
   externalClassNames?: ExternalClassNamesType
 }
+
+export interface FeatureListProps extends ChildProps {
+  direction?: 'horizontal' | 'vertical'
+}
