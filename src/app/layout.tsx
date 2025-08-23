@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import PropgressProvider from '@/providers/progress.provider'
-import { inter } from '@/fonts/fonts'
+import { inter } from '@/config/fonts/fonts'
 
 import 'normalize.css'
 import '@/styles/index.scss'
