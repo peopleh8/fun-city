@@ -1,0 +1,26 @@
+@use '../helpers/functions';
+@use '../helpers/mixins';
+
+:root {
+  --bg-color: #f9f7fa;
+  --black-color: #000;
+  --white-color: #fff;
+  --text-color-light: #fff;
+  --text-color-dark: #1c1b1e;
+  --text-color-error: #ff6565;
+  --placeholder-color-error: #ffa5a5;
+  --border-color-error: #ff656533;
+  --base-font-size: #{functions.get-vw(16px)};
+  --base-line-height: 120%;
+  --base-letter-spacing: -9%;
+  --base-font-weight: 400;
+  --header-height: #{functions.get-vw(122px)};
+  --default-border-width: #{functions.get-vw(1px)};
+  --section-padding-inline: #{functions.get-vw(90px)};
+  --section-margin-block: #{functions.get-vw(160px)} 0 #{functions.get-vw(190px)};
+  --default-transition: 0.25s;
+  --link-transition: opacity 0.4s ease, transform 0.4s ease;
+  --burder-transition: transform 0.3s ease;
+  --fade-transition: all 0.3s ease 0s;
+  --fade-delay: 0.25s;
+}
