@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import Logo from '@/components/Logo/Logo'
 import Icon from '@/components/UI/Icon/Icon'
-import Button from '../UI/Button/Button'
+import Button from '@/components/UI/Button/Button'
+import Burger from '@/components/Burger/Burger'
 import styles from '@/components/Header/Header.module.scss'
 import { ReactComponent as DecIcon } from '@/assets/icons/header-dec.svg'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-right.svg'
@@ -17,7 +18,9 @@ const Header: FC = () => {
         text='Discover More'
         endIcon={<ArrowIcon />}
         onClick={() => {}}
+        externalClassNames={styles.btn}
       />
+      <Burger />
     </header>
   )
 }

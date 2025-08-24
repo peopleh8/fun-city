@@ -1,5 +1,8 @@
+@use '../../styles/helpers/functions';
+@use '../../styles/helpers/mixins';
+
 .header {
-  height: 20px;
+  height: functions.get-vw(20px);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -10,7 +13,7 @@
 }
 
 .footer {
-  height: 53px;
+  height: functions.get-vw(53px);
 }
 
 .link {
@@ -20,5 +23,16 @@
   img {
     width: auto;
     height: 100%;
+  }
+}
+
+@include mixins.mobile {
+  .header {
+    height: 15px;
+    position: static;
+    transform: translate(0, 0);
+  }
+  .footer {
+    height: 21px;
   }
 }

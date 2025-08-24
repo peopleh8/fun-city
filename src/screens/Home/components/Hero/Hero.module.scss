@@ -1,4 +1,5 @@
 @use '../../../../styles/helpers/mixins';
+@use '../../../../styles/helpers/functions';
 
 .hero {
   position: relative;
@@ -13,10 +14,13 @@
     object-fit: cover;
     z-index: -1;
   }
+  .btn {
+    display: none;
+  }
 }
 
 .content {
-  padding: var(--header-height) 16px 60px;
+  padding: var(--header-height) functions.get-vw(16px) functions.get-vw(60px);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -24,12 +28,12 @@
 }
 
 .inner {
-  padding-top: 424px;
+  padding-top: functions.get-vw(424px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 141px;
-  max-width: 1380px;
+  gap: functions.get-vw(141px);
+  max-width: functions.get-vw(1380px);
   width: 100%;
 }
 
@@ -53,34 +57,34 @@
 .subtitle {
   position: absolute;
   z-index: 2;
-  top: 60px;
+  top: functions.get-vw(60px);
   right: 0;
-  max-width: 320px;
-  text-indent: 55px;
-  transform: translateX(102px);
+  max-width: functions.get-vw(320px);
+  text-indent: functions.get-vw(55px);
+  transform: translateX(functions.get-vw(102px));
 }
 
 .nav {
   background: rgba(#fcfdff, 0.4);
   backdrop-filter: blur(150px);
-  border-radius: 13px;
-  padding: 3px;
+  border-radius: functions.get-vw(13px);
+  padding: functions.get-vw(3px);
 }
 
 .navInner {
   background: var(--white-color);
-  border-radius: 13px;
+  border-radius: functions.get-vw(13px);
   display: flex;
-  padding: 6px;
-  gap: 3px;
+  padding: functions.get-vw(6px);
+  gap: functions.get-vw(3px);
 }
 
 .navItem {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 22px 28px;
-  border-radius: 8px;
+  gap: functions.get-vw(7px);
+  padding: functions.get-vw(22px) functions.get-vw(28px);
+  border-radius: functions.get-vw(8px);
   transition: background var(--default-transition) ease;
   @include mixins.desktop-hoverable {
     &:hover {
@@ -97,8 +101,8 @@
 }
 
 .navIcon {
-  width: 20px;
-  height: 20px;
+  width: functions.get-vw(20px);
+  height: functions.get-vw(20px);
   svg {
     stroke: #0b1041;
     transition: stroke var(--default-transition) ease;
@@ -106,11 +110,59 @@
 }
 
 .navText {
-  font-size: 16px;
+  font-size: functions.get-vw(16px);
   line-height: 1;
   color: #0b1041;
   text-transform: uppercase;
   font-weight: 500;
   opacity: 0.69;
   transition: all var(--default-transition) ease;
+}
+
+@include mixins.mobile {
+  .hero {
+    height: 100svh;
+    .btn {
+      display: flex;
+      margin-top: auto;
+    }
+  }
+  .inner {
+    height: 100%;
+    max-width: 100%;
+    padding-top: 0;
+    gap: 0;
+  }
+  .content {
+    padding-inline: 16px;
+    padding-bottom: 105px;
+  }
+  .title {
+    span {
+      &:first-child {
+        text-align: center;
+      }
+      &:last-child {
+        text-align: center;
+      }
+    }
+  }
+  .nav {
+    display: none;
+  }
+  .topography {
+    margin-top: auto;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+  .subtitle {
+    max-width: 228px;
+    position: static;
+    text-indent: 0;
+    transform: translateX(0);
+  }
 }

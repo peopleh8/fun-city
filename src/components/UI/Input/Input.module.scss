@@ -1,13 +1,16 @@
+@use '../../../styles/helpers/functions';
+@use '../../../styles/helpers/mixins';
+
 .field {
   position: relative;
 }
 
 .inp {
-  font-size: 18px;
+  font-size: functions.get-vw(18px);
   line-height: 1;
   font-weight: 400;
-  padding: 20px 23px;
-  border-radius: 23px;
+  padding: functions.get-vw(20px) functions.get-vw(23px);
+  border-radius: functions.get-vw(23px);
   border: var(--default-border-width) solid;
 }
 
@@ -46,5 +49,16 @@
   left: 0;
   top: 100%;
   width: 100%;
-  padding: 4px 6px 2px 6px;
+  padding: functions.get-vw(4px) functions.get-vw(6px) functions.get-vw(2px) functions.get-vw(6px);
+}
+
+@include mixins.mobile {
+  .inp {
+    font-size: 13px;
+    padding: 24px 23px;
+    border-radius: 23px;
+  }
+  .error {
+    padding: 4px 6px 2px 6px;
+  }
 }

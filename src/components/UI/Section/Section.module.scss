@@ -1,35 +1,59 @@
+@use '../../../styles/helpers/functions';
+@use '../../../styles/helpers/mixins';
+
 .section {
-  padding-top: 120px;
-  padding-bottom: 60px;
+  padding-top: functions.get-vw(120px);
+  padding-bottom: functions.get-vw(60px);
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
 .type-1 {
-  padding-inline: 110px;
+  padding-inline: functions.get-vw(110px);
 }
 
 .type-2 {
-  padding-inline: 85px;
+  padding-inline: functions.get-vw(85px);
 }
 
 .type-3 {
-  padding-inline: 25px;
+  padding-inline: functions.get-vw(25px);
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: functions.get-vw(40px);
   text-align: center;
   align-items: center;
 }
 
 .subtitle {
-  max-width: 580px;
+  max-width: functions.get-vw(580px);
 }
 
 .body {
   position: relative;
+}
+
+@include mixins.mobile {
+  .section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .type-1,
+  .type-2,
+  .type-3 {
+    padding-inline: 16px;
+  }
+
+  .header {
+    gap: 33px;
+  }
+
+  .subtitle {
+    max-width: 100%;
+  }
 }

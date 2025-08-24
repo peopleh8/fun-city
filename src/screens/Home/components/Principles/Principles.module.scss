@@ -1,28 +1,43 @@
 @use '../../../../styles/helpers/mixins';
+@use '../../../../styles/helpers/functions';
 
 .principles {
-  gap: 50px;
+  gap: functions.get-vw(50px);
 }
 
 .tab {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: functions.get-vw(80px);
 }
 
 .nav {
   display: flex;
   justify-content: center;
-  gap: 120px;
+  flex-wrap: wrap;
+  gap: functions.get-vw(120px);
+  counter-reset: list;
 }
 
 .navBtn {
   font-weight: 500;
-  font-size: 90px;
+  font-size: functions.get-vw(90px);
   line-height: 80%;
   text-transform: capitalize;
   opacity: 0.1;
   transition: opacity var(--default-transition);
+  padding-right: functions.get-vw(36px);
+  position: relative;
+  &::before {
+    counter-increment: list;
+    content: '0' counter(list);
+    position: absolute;
+    line-height: 80%;
+    font-weight: 700;
+    right: 0;
+    top: 0;
+    font-size: functions.get-vw(20px);
+  }
   @include mixins.desktop-hoverable {
     &:hover {
       opacity: 1;
@@ -36,4 +51,23 @@
 .body {
   width: 100%;
   @include mixins.tab;
+}
+
+@include mixins.mobile {
+  .principles {
+    gap: 33px;
+  }
+  .tab {
+    gap: 60px;
+  }
+  .nav {
+    gap: 24px;
+  }
+  .navBtn {
+    font-size: 30px;
+    padding-right: 22px;
+    &::before {
+      font-size: 14px;
+    }
+  }
 }

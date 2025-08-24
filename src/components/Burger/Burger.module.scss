@@ -1,0 +1,40 @@
+@use '../../styles/helpers/mixins';
+
+.burger {
+  display: none;
+}
+
+@include mixins.mobile {
+  .burger {
+    display: block;
+    margin-left: auto;
+    width: 60px;
+    height: 38px;
+    background: rgba(#101530, 0.2);
+    border-radius: 10px;
+    position: relative;
+    &.active {
+      span {
+        &:first-child,
+        &:last-child {
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 40px;
+      height: 2px;
+      background: var(--white-color);
+      transition: transform var(--default-transition) ease;
+      &:first-child {
+        transform: translate(-50%, -3px);
+      }
+      &:last-child {
+        transform: translate(-50%, 3px);
+      }
+    }
+  }
+}

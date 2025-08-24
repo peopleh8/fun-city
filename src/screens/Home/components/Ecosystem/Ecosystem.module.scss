@@ -1,11 +1,12 @@
 @use '../../../../styles/helpers/mixins';
+@use '../../../../styles/helpers/functions';
 
 .ecosystem {
-  gap: 60px;
+  gap: functions.get-vw(60px);
 }
 
 .item {
-  padding: 60px 0;
+  padding: functions.get-vw(60px) 0;
   border-bottom: var(--default-border-width) solid rgba(#000, 0.2);
   position: relative;
   transition: border-bottom-color var(--default-transition) ease;
@@ -27,8 +28,8 @@
 
 .inner {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  align-items: flex-start;
+  gap: functions.get-vw(16px);
   opacity: 0.2;
   position: relative;
   z-index: 2;
@@ -36,31 +37,32 @@
 }
 
 .counter {
-  font-size: 70px;
+  font-size: functions.get-vw(70px);
   line-height: 90%;
 }
 
 .title {
   flex: 1;
   text-align: right;
-  font-size: 70px;
+  font-size: functions.get-vw(70px);
   line-height: 90%;
 }
 
 .card {
-  max-width: 431px;
+  max-width: functions.get-vw(431px);
   width: 100%;
   position: absolute;
+  z-index: 2;
   top: 50%;
-  left: 270px;
+  left: functions.get-vw(270px);
   transform: translateY(-50%) scale(0.95);
-  border-radius: 50px;
-  padding: 46px;
+  border-radius: functions.get-vw(50px);
+  padding: functions.get-vw(46px);
   background: rgba(#fff, 0.51);
   backdrop-filter: blur(110px);
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: functions.get-vw(100px);
   color: #757575;
   opacity: 0;
   visibility: none;
@@ -69,7 +71,60 @@
 }
 
 .cardCounter {
-  font-size: 21px;
+  font-size: functions.get-vw(21px);
   line-height: 120%;
   opacity: 0.8;
+}
+
+@include mixins.mobile {
+  .ecosystem {
+    gap: 60px;
+  }
+  .item {
+    padding: 20px 0;
+    cursor: pointer;
+    &.active {
+      border-bottom-color: var(--black-color);
+      .inner {
+        opacity: 1;
+      }
+      // .card {
+      //   opacity: 1;
+      //   pointer-events: auto;
+      //   visibility: visible;
+      //   transform: translateY(-50%) scale(1);
+      // }
+    }
+  }
+  .inner {
+    gap: 50px;
+  }
+
+  .counter {
+    font-size: 33px;
+  }
+
+  .title {
+    font-size: 33px;
+  }
+
+  .card {
+    display: none;
+
+    max-width: 100%;
+    position: static;
+    transform: translateY(0) scale(1);
+    border-radius: 0;
+    padding: 40px 0 0;
+    background: none;
+    backdrop-filter: blur(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: none;
+  }
+
+  .cardCounter {
+    display: none;
+  }
 }

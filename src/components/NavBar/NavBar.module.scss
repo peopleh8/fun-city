@@ -1,17 +1,28 @@
-.nav {
-}
+@use '../../styles/helpers/functions';
+@use '../../styles/helpers/mixins';
 
 .footer {
   display: block;
   .list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: functions.get-vw(14px);
   }
   .link {
     font-weight: 600;
-    font-size: 18px;
+    font-size: functions.get-vw(18px);
     line-height: 110%;
     color: var(--white-color);
+  }
+}
+
+@include mixins.mobile {
+  .footer {
+    .list {
+      gap: 14px;
+    }
+    .link {
+      font-size: 15px;
+    }
   }
 }

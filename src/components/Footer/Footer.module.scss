@@ -1,51 +1,55 @@
+@use '../../styles/helpers/functions';
+@use '../../styles/helpers/mixins';
+
 .footer {
   background: var(--footer-bg-color);
   display: flex;
   flex-direction: column;
-  gap: 403px;
+  gap: functions.get-vw(403px);
 }
 
 .top,
 .bot {
-  padding: 60px;
+  padding: functions.get-vw(60px);
 }
 
 .topInner {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: functions.get-vw(16px);
 }
 
 .sideTitle {
   color: var(--white-color);
-  margin-bottom: 26px;
-  font-size: 27px;
-  line-height: 37px;
+  margin-bottom: functions.get-vw(26px);
+  font-size: functions.get-vw(27px);
+  line-height: functions.get-vw(37px);
 }
 
 .copy {
-  font-size: 18px;
-  line-height: 27px;
+  font-size: functions.get-vw(18px);
+  line-height: functions.get-vw(27px);
   color: var(--white-color);
   opacity: 0.4;
-  margin-top: 36px;
+  margin-top: functions.get-vw(36px);
 }
 
 .topSide {
   &:first-child {
-    max-width: 450px;
+    max-width: functions.get-vw(450px);
     width: 100%;
   }
   &:last-child {
     display: flex;
-    gap: 80px;
+    flex-wrap: wrap;
+    gap: functions.get-vw(80px);
   }
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: functions.get-vw(16px);
   &.darken {
     .itemTitle {
       opacity: 0.3;
@@ -55,7 +59,7 @@
 
 .itemTitle {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: functions.get-vw(12px);
   line-height: 1;
   text-transform: uppercase;
   color: var(--white-color);
@@ -67,37 +71,99 @@
 
 .btn {
   position: absolute;
-  right: 6px;
+  right: functions.get-vw(6px);
   top: 50%;
   transform: translateY(-50%);
-  border-radius: 18px;
+  border-radius: functions.get-vw(18px);
   text-transform: capitalize;
   font-weight: 500;
-  box-shadow: 0px 2px 20px 0px #ffffff99;
+  box-shadow: 0 functions.get-vw(2px) functions.get-vw(20px) 0 #ffffff99;
 }
 
 .botInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: functions.get-vw(16px);
 }
 
 .text {
   color: var(--white-color);
-  font-size: 63px;
+  font-size: functions.get-vw(63px);
   text-transform: capitalize;
-  line-height: 94px;
-  letter-spacing: -2px;
+  line-height: functions.get-vw(94px);
+  letter-spacing: calc(functions.get-vw(2px) * -1);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 83px;
-  font-size: 63px;
+  gap: functions.get-vw(83px);
+  font-size: functions.get-vw(63px);
   text-transform: capitalize;
-  line-height: 94px;
-  letter-spacing: -2px;
+  line-height: functions.get-vw(94px);
+  letter-spacing: calc(functions.get-vw(2px) * -1);
   color: var(--white-color);
+}
+
+@include mixins.mobile {
+  .footer {
+    gap: 40px;
+  }
+  .top {
+    padding: 60px 16px 0;
+  }
+  .topInner {
+    flex-direction: column;
+  }
+  .topSide {
+    &:first-child {
+      max-width: 100%;
+      margin-bottom: 114px;
+    }
+    &:last-child {
+      justify-content: space-between;
+      gap: 40px 16px;
+    }
+  }
+  .sideTitle {
+    font-size: 18px;
+    line-height: 37px;
+    margin-bottom: 26px;
+  }
+  .copy {
+    margin-top: 35px;
+    font-size: 13px;
+    line-height: 27px;
+  }
+  .item {
+    gap: 16px;
+    &:last-child {
+      width: 100%;
+    }
+  }
+  .itemTitle {
+    font-size: 12px;
+    line-height: 1;
+  }
+  .bot {
+    padding: 16px;
+  }
+  .botInner {
+    gap: 16px;
+  }
+  .logo {
+    gap: 6px;
+    font-size: 63px;
+    line-height: 94px;
+  }
+  .text {
+    font-size: 19px;
+    line-height: 30px;
+  }
+  .btn {
+    right: 6px;
+    border-radius: 18px;
+    box-shadow: 0 2px 20px 0 #ffffff99;
+  }
 }

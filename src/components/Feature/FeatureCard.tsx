@@ -32,7 +32,7 @@ const FeatureCard: FC = () => {
           <div className={styles.title}>A Coherent World of Happiness</div>
           <div className={styles.desc}>We believe that love unlocks our highest potential — in relationships, creativity, and growth. Every action starts with compassion.</div>
         </div>
-        <div>Btn</div>
+        <div className={styles.btn}>Btn</div>
       </div>
       <div className={styles.photo}>
         <Image

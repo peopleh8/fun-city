@@ -25,4 +25,11 @@
   --burder-transition: transform 0.3s ease;
   --fade-transition: all 0.3s ease 0s;
   --fade-delay: 0.25s;
+
+  @include mixins.mobile {
+    --base-font-size: 13px;
+    --header-height: 70px;
+    --default-border-width: 1px;
+    --header-padding-inline: 16px;
+  }
 }

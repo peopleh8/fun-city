@@ -1,7 +1,10 @@
+@use '../../../styles/helpers/functions';
+@use '../../../styles/helpers/mixins';
+
 .title {
   font-weight: 600;
   line-height: 80%;
-  letter-spacing: -4px;
+  letter-spacing: calc(functions.get-vw(4px) * -1);
   em,
   i {
     font-weight: 300;
@@ -18,18 +21,33 @@
 }
 
 .xl {
-  font-size: 219px;
+  font-size: functions.get-vw(219px);
 }
 
 .lg {
-  font-size: 160px;
+  font-size: functions.get-vw(160px);
 }
 
 .md {
-  font-size: 79px;
+  font-size: functions.get-vw(79px);
 }
 
 .sm {
-  font-size: 28px;
+  font-size: functions.get-vw(28px);
   letter-spacing: 0;
+}
+
+@include mixins.mobile {
+  .xl {
+    font-size: 60px;
+  }
+  .lg {
+    font-size: 60px;
+  }
+  .md {
+    font-size: 60px;
+  }
+  .sm {
+    font-size: 60px;
+  }
 }

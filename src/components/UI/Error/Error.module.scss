@@ -1,6 +1,15 @@
+@use '../../../styles/helpers/functions';
+@use '../../../styles/helpers/mixins';
+
 .error {
-  font-size: 10px;
+  font-size: functions.get-vw(13px);
   line-height: 1;
   color: var(--text-color-error);
   pointer-events: none;
+}
+
+@include mixins.mobile {
+  .error {
+    font-size: 11px;
+  }
 }

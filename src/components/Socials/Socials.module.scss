@@ -1,19 +1,35 @@
+@use '../../styles/helpers/functions';
+@use '../../styles/helpers/mixins';
+
 .footer {
   .list {
     display: flex;
-    gap: 9px;
+    gap: functions.get-vw(9px);
   }
   .link {
-    width: 48px;
-    height: 48px;
+    width: functions.get-vw(48px);
+    height: functions.get-vw(48px);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 18px;
+    border-radius: functions.get-vw(18px);
     border: var(--default-border-width) solid #49494b;
     img {
       width: auto;
       height: 40%;
+    }
+  }
+}
+
+@include mixins.mobile {
+  .footer {
+    .list {
+      gap: 8px;
+    }
+    .link {
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
     }
   }
 }
