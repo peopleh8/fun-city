@@ -4,6 +4,8 @@
 .hero {
   position: relative;
   z-index: 10;
+  height: 100svh;
+  background: #6b6cb1;
   & > img,
   & > video {
     position: absolute;
@@ -13,6 +15,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    mix-blend-mode: luminosity;
   }
   .btn {
     display: none;
@@ -25,10 +28,18 @@
   justify-content: center;
   align-items: flex-end;
   height: 100%;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(270deg, rgba(181, 182, 251, 0) 0%, #e5d2eb 48.56%, rgba(181, 182, 251, 0) 100%);
+    mix-blend-mode: overlay;
+  }
 }
 
 .inner {
-  padding-top: functions.get-vw(424px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,7 +158,6 @@
 
 @include mixins.mobile {
   .hero {
-    height: 100svh;
     .btn {
       display: flex;
       margin-top: auto;

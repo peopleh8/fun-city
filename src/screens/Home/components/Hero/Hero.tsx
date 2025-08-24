@@ -23,12 +23,19 @@ const Hero: FC = () => {
 
   return (
     <div className={styles.hero}>
-      <Image
+      {/* <Image
         src={bg}
         alt='Hero Background'
         fill
         priority
         loading='eager'
+      /> */}
+      <video
+        src='/hero.mp4'
+        autoPlay
+        loop
+        muted
+        preload='auto'
       />
       <HeroContent />
     </div>
