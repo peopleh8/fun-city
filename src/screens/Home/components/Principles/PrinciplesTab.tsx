@@ -1,8 +1,10 @@
 'use client'
 
-import { FC, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react'
 import { EffectFade } from 'swiper/modules'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import classNames from 'classnames'
 import FeatureCard from '@/components/Feature/FeatureCard'
 import FeatureList from '@/components/Feature/FeatureList'
@@ -10,6 +12,8 @@ import styles from '@/screens/Home/components/Principles/Principles.module.scss'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const PrinciplesTab: FC = () => {
   const tabRef = useRef<SwiperRef>(null)
@@ -21,6 +25,17 @@ const PrinciplesTab: FC = () => {
     tabRef.current?.swiper.slideTo(index)
     setActiveTab(index)
   }
+
+  useEffect(() => {
+    const navTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: `.${styles.nav}`,
+        start: 'center bottom',
+      },
+    })
+
+    navTl.fromTo(`.${styles.navItem}`, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.1 })
+  }, [])
 
   return (
     <div className={styles.tab}>

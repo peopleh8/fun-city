@@ -19,6 +19,10 @@
   counter-reset: list;
 }
 
+.navItem {
+  display: block;
+}
+
 .navBtn {
   font-weight: 500;
   font-size: functions.get-vw(90px);

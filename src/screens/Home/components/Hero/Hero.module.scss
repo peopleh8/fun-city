@@ -35,6 +35,10 @@
   gap: functions.get-vw(141px);
   max-width: functions.get-vw(1380px);
   width: 100%;
+  & > * {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 }
 
 .topography {
@@ -179,14 +183,14 @@
     background: rgba(#fff, 0.1);
     backdrop-filter: blur(170px);
     padding-top: var(--header-height);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: all var(--default-transition) ease;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: all var(--default-transition) ease !important;
     &.open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
     }
   }
   .panelInner {
