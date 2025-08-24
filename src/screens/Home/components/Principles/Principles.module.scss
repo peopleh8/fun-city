@@ -23,7 +23,6 @@
   font-weight: 500;
   font-size: functions.get-vw(90px);
   line-height: 80%;
-  text-transform: capitalize;
   opacity: 0.1;
   transition: opacity var(--default-transition);
   padding-right: functions.get-vw(36px);
@@ -40,6 +39,11 @@
   }
   @include mixins.desktop-hoverable {
     &:hover {
+      opacity: 1;
+    }
+  }
+  @include mixins.mobile-pressable {
+    &:active {
       opacity: 1;
     }
   }

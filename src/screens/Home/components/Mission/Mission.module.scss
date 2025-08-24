@@ -3,10 +3,16 @@
 
 .mission {
   gap: functions.get-vw(120px);
+  &::before {
+    top: functions.get-vw(210px);
+  }
 }
 
 @include mixins.mobile {
   .mission {
     gap: 60px;
+    &::before {
+      top: 200px;
+    }
   }
 }

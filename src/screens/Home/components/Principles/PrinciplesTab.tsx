@@ -32,7 +32,7 @@ const PrinciplesTab: FC = () => {
             })}
             onClick={() => handleNavClick(0)}
           >
-            mantras
+            Mantras
           </button>
         </li>
         <li className={styles.navItem}>
@@ -42,7 +42,7 @@ const PrinciplesTab: FC = () => {
             })}
             onClick={() => handleNavClick(1)}
           >
-            principles
+            Principles
           </button>
         </li>
         <li className={styles.navItem}>
@@ -52,7 +52,7 @@ const PrinciplesTab: FC = () => {
             })}
             onClick={() => handleNavClick(2)}
           >
-            values
+            Values
           </button>
         </li>
       </ol>

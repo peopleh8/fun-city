@@ -6,6 +6,19 @@
     display: flex;
     gap: functions.get-vw(9px);
   }
+  .item {
+    @include mixins.desktop-hoverable {
+      &:hover {
+        .link {
+          border-color: var(--white-color);
+          background: var(--white-color);
+          img {
+            filter: brightness(0) saturate(100%) invert(8%) sepia(9%) saturate(474%) hue-rotate(219deg) brightness(104%) contrast(95%);
+          }
+        }
+      }
+    }
+  }
   .link {
     width: functions.get-vw(48px);
     height: functions.get-vw(48px);
@@ -14,9 +27,11 @@
     align-items: center;
     border-radius: functions.get-vw(18px);
     border: var(--default-border-width) solid #49494b;
+    transition: all var(--default-transition) ease;
     img {
       width: auto;
       height: 40%;
+      transition: filter var(--default-transition) ease;
     }
   }
 }

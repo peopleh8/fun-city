@@ -2,9 +2,16 @@
 @use '../../../styles/helpers/mixins';
 
 .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all var(--default-transition) ease;
+}
+
+.icon {
+  svg {
+    transition: stroke var(--default-transition) ease;
+  }
 }
 
 .button {
@@ -22,19 +29,114 @@
 
 .contained {
   font-weight: 700;
+  border: var(--default-border-width) solid;
   &.dark {
+    border-color: #101530;
     color: var(--text-color-light);
     background: #101530;
+    .icon svg {
+      stroke: var(--white-color);
+    }
+    @include mixins.desktop-hoverable {
+      &:hover {
+        background: transparent;
+        color: #101530;
+        .icon svg {
+          stroke: #101530;
+        }
+      }
+    }
+    @include mixins.mobile-pressable {
+      &:active {
+        background: transparent;
+        color: #101530;
+        .icon svg {
+          stroke: #101530;
+        }
+      }
+    }
   }
   &.light {
+    border-color: var(--white-color);
     background: var(--white-color);
     color: var(--black-color);
+    .icon svg {
+      stroke: var(--black-color);
+    }
+    @include mixins.desktop-hoverable {
+      &:hover {
+        background: transparent;
+        color: var(--white-color);
+        .icon svg {
+          stroke: var(--white-color);
+        }
+      }
+    }
+    @include mixins.mobile-pressable {
+      &:active {
+        background: transparent;
+        color: var(--white-color);
+        .icon svg {
+          stroke: var(--white-color);
+        }
+      }
+    }
   }
 }
 
 .outlined {
   font-weight: 500;
   border: var(--default-border-width) solid;
+  &.dark {
+    border-color: #101530;
+    color: #101530;
+    .icon svg {
+      stroke: #101530;
+    }
+    @include mixins.desktop-hoverable {
+      &:hover {
+        background: #101530;
+        color: var(--white-color);
+        .icon svg {
+          stroke: var(--white-color);
+        }
+      }
+    }
+    @include mixins.mobile-pressable {
+      &:active {
+        background: #101530;
+        color: var(--white-color);
+        .icon svg {
+          stroke: var(--white-color);
+        }
+      }
+    }
+  }
+  &.light {
+    border-color: var(--white-color);
+    color: var(--white-color);
+    .icon svg {
+      stroke: var(--white-color);
+    }
+    @include mixins.desktop-hoverable {
+      &:hover {
+        background: var(--white-color);
+        color: #101530;
+        .icon svg {
+          stroke: #101530;
+        }
+      }
+    }
+    @include mixins.mobile-pressable {
+      &:active {
+        background: var(--white-color);
+        color: #101530;
+        .icon svg {
+          stroke: #101530;
+        }
+      }
+    }
+  }
 }
 
 .link {

@@ -18,6 +18,12 @@
   }
 }
 
+@mixin mobile-pressable {
+  @media (min-width: 1200px) and (hover: none) {
+    @content;
+  }
+}
+
 @mixin line-clamp($linesDesktop, $linesMobile) {
   display: -webkit-box;
   -webkit-box-orient: vertical;

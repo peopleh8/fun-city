@@ -1,8 +1,10 @@
 import { FC } from 'react'
-import styles from '@/components/Feature/Feature.module.scss'
-import photo from '@/assets/images/feature-1.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import Button from '@/components/UI/Button/Button'
+import styles from '@/components/Feature/Feature.module.scss'
+import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-right.svg'
+import photo from '@/assets/images/feature-1.png'
 
 const FeatureCard: FC = () => {
   return (
@@ -32,7 +34,14 @@ const FeatureCard: FC = () => {
           <div className={styles.title}>A Coherent World of Happiness</div>
           <div className={styles.desc}>We believe that love unlocks our highest potential — in relationships, creativity, and growth. Every action starts with compassion.</div>
         </div>
-        <div className={styles.btn}>Btn</div>
+        <Button
+          text='Explore Vision'
+          endIcon={<ArrowIcon />}
+          theme='dark'
+          variant='outlined'
+          onClick={() => {}}
+          externalClassNames={styles.btn}
+        />
       </div>
       <div className={styles.photo}>
         <Image

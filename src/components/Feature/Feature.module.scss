@@ -58,6 +58,7 @@
 .content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: functions.get-vw(30px);
 }
 
@@ -91,6 +92,14 @@
   font-weight: 600;
   border-radius: functions.get-vw(40px);
   border: var(--default-border-width) solid rgba(#000, 0.1);
+  transition: all var(--default-transition) ease;
+  @include mixins.desktop-hoverable {
+    &:hover {
+      border-color: #101530;
+      background: #101530;
+      color: var(--white-color);
+    }
+  }
 }
 
 .title {

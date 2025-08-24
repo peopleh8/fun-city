@@ -3,6 +3,7 @@
 
 .foundations {
   gap: functions.get-vw(120px);
+  overflow: hidden;
 }
 
 .list {
@@ -115,6 +116,7 @@
 @include mixins.mobile {
   .foundations {
     gap: 60px;
+    overflow: visible;
   }
   .list {
     gap: 10px;

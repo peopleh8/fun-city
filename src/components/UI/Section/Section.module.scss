@@ -5,8 +5,23 @@
   padding-top: functions.get-vw(120px);
   padding-bottom: functions.get-vw(60px);
   position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  &::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: -2;
+    top: 0;
+    left: 50%;
+    width: 120%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #ceceff;
+    filter: blur(404px);
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .type-1 {
@@ -35,12 +50,18 @@
 
 .body {
   position: relative;
+  z-index: 2;
 }
 
 @include mixins.mobile {
   .section {
     padding-top: 100px;
     padding-bottom: 100px;
+    &::before {
+      width: 500%;
+      left: 0;
+      transform: translate3d(-20%, 0, 0);
+    }
   }
 
   .type-1,
