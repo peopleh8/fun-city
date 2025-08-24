@@ -13,7 +13,9 @@
     background: rgba(#101530, 0.2);
     border-radius: 10px;
     position: relative;
+    transition: background var(--default-transition) ease;
     &.active {
+      background: rgba(#101530, 0.8);
       span {
         &:first-child,
         &:last-child {

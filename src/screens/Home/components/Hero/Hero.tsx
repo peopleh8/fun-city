@@ -10,8 +10,7 @@ const Hero: FC = () => {
       <Image
         src={bg}
         alt='Hero Background'
-        layout='fill'
-        objectFit='cover'
+        fill
       />
       <HeroContent />
     </div>

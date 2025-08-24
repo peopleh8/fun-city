@@ -1,7 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import appReducer from '@/store/reducers/app.slice'
 import testReducer from '@/store/reducers/test.slice'
 
 const rootReducer = combineReducers({
+  app: appReducer,
   test: testReducer,
 })
 

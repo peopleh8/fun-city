@@ -24,7 +24,7 @@ export interface NavBarProps {
 
 export interface SocialsProps {
   list: { id: number; icon: string | StaticImageData; link: string }[]
-  position: 'footer'
+  position: 'footer' | 'menu'
   externalClassNames?: ExternalClassNamesType
 }
 
