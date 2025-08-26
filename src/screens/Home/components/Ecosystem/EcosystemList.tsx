@@ -22,7 +22,7 @@ const EcosystemList: FC = () => {
           duration: 0.6,
           scrollTrigger: {
             trigger: item,
-            start: 'bottom bottom',
+            start: '110% bottom',
           },
         },
       )

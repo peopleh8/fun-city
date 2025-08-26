@@ -31,10 +31,12 @@
   transition: opacity var(--default-transition);
   padding-right: functions.get-vw(36px);
   position: relative;
+  color: var(--text-color-dark);
   &::before {
     counter-increment: list;
     content: '0' counter(list);
     position: absolute;
+    color: var(--text-color-dark);
     line-height: 80%;
     font-weight: 700;
     right: 0;
@@ -59,6 +61,15 @@
 .body {
   width: 100%;
   @include mixins.tab;
+}
+
+.sections {
+  width: 100%;
+  span {
+    display: block;
+    width: 100%;
+    height: 100svh;
+  }
 }
 
 @include mixins.mobile {

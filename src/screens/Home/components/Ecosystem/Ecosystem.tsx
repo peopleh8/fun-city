@@ -6,6 +6,7 @@ import styles from '@/screens/Home/components/Ecosystem/Ecosystem.module.scss'
 const Ecosystem: FC = () => {
   return (
     <Section
+      id='ecosystem'
       subtitle='Building a better society through technology and community'
       title='The Fun City <em>Ecosystem</em>'
       inlineType='type-2'

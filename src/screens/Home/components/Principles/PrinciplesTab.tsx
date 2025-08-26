@@ -30,7 +30,7 @@ const PrinciplesTab: FC = () => {
     const navTl = gsap.timeline({
       scrollTrigger: {
         trigger: `.${styles.nav}`,
-        start: 'center bottom',
+        start: '110% bottom',
       },
     })
 

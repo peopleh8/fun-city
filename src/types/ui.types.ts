@@ -140,6 +140,7 @@ type ArticleWithContent = {
 export type ArticleProps = BaseArticleProps & (ArticleWithChildren | ArticleWithContent)
 
 export interface SectionProps extends ChildProps {
+  id?: string
   subtitle?: string
   title?: string
   size?: 'xl' | 'lg' | 'md' | 'sm'

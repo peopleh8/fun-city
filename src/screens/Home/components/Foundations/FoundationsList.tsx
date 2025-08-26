@@ -21,7 +21,7 @@ const FoundationsList: FC = () => {
           duration: 0.6,
           scrollTrigger: {
             trigger: item,
-            start: '30% bottom',
+            start: '40% bottom',
           },
         },
       )

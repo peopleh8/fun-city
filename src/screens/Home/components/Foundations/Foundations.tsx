@@ -6,6 +6,7 @@ import styles from '@/screens/Home/components/Foundations/Foundations.module.scs
 const Foundations: FC = () => {
   return (
     <Section
+      id='glossary'
       title='Learn Our <em>Foundations</em>'
       size='md'
       inlineType='type-3'

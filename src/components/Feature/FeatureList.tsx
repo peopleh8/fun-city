@@ -13,7 +13,7 @@ const FeatureList: FC<FeatureListProps> = ({ direction = 'vertical', children })
   const classes = classNames(styles.list, styles[direction])
 
   useEffect(() => {
-    const items = gsap.utils.toArray<HTMLElement>(`.${styles.card}`)
+    const items = gsap.utils.toArray<HTMLElement>(`.${styles.horizontal} .${styles.card}`)
 
     items.forEach((item) => {
       gsap.fromTo(
@@ -25,12 +25,12 @@ const FeatureList: FC<FeatureListProps> = ({ direction = 'vertical', children })
           duration: 0.6,
           scrollTrigger: {
             trigger: item,
-            start: '10% bottom',
+            start: '30% bottom',
           },
         },
       )
     })
-  }, [])
+  }, [direction])
 
   return <div className={classes}>{children}</div>
 }

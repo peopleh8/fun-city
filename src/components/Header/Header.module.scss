@@ -8,12 +8,38 @@
   justify-content: space-between;
   gap: functions.get-vw(16px);
   padding-inline: var(--header-padding-inline);
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 100;
   opacity: 0;
+  transition: transform 0.3s;
+  will-change: transform;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--white-color);
+    transition: transform 0.4s;
+    will-change: transform;
+    transform: translateY(-100%);
+  }
+}
+
+.hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.overlayed {
+  &::before {
+    transform: translateY(0);
+  }
 }
 
 .icon {

@@ -6,6 +6,7 @@ import styles from '@/screens/Home/components/Principles/Principles.module.scss'
 const Principles: FC = () => {
   return (
     <Section
+      id='principles'
       title='<em>Core</em> Principles'
       size='sm'
       externalClassNames={styles.principles}

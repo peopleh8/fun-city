@@ -11,7 +11,7 @@ import classNames from 'classnames'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const Section: FC<SectionProps> = ({ children, title, subtitle, size = 'lg', inlineType = 'type-1', externalClassNames }) => {
+const Section: FC<SectionProps> = ({ children, id, title, subtitle, size = 'lg', inlineType = 'type-1', externalClassNames }) => {
   const classes = classNames(styles.section, styles[inlineType], externalClassNames)
 
   useEffect(() => {
@@ -52,7 +52,10 @@ const Section: FC<SectionProps> = ({ children, title, subtitle, size = 'lg', inl
   }, [])
 
   return (
-    <div className={classes}>
+    <section
+      {...(id ? { id } : {})}
+      className={classes}
+    >
       {(title || subtitle) && (
         <div className={styles.header}>
           {subtitle && (
@@ -71,7 +74,7 @@ const Section: FC<SectionProps> = ({ children, title, subtitle, size = 'lg', inl
         </div>
       )}
       <div className={styles.body}>{children}</div>
-    </div>
+    </section>
   )
 }
 

@@ -60,7 +60,7 @@
     &::before {
       width: 500%;
       left: 0;
-      transform: translate3d(-20%, 0, 0);
+      transform: translate3d(-30%, 0, 0);
     }
   }
 
@@ -75,6 +75,6 @@
   }
 
   .subtitle {
-    max-width: 100%;
+    max-width: 380px;
   }
 }

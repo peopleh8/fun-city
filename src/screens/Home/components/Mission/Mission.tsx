@@ -7,6 +7,7 @@ import styles from '@/screens/Home/components/Mission/Mission.module.scss'
 const Mission: FC = () => {
   return (
     <Section
+      id='mission'
       title='<em>Our</em> Mission'
       subtitle='The frontier of the future, <br /> inspired to create sustainable civilization through harmony, consciousness, and infinite creative potential.'
       externalClassNames={styles.mission}
