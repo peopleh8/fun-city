@@ -5,6 +5,7 @@
   position: relative;
   height: 100svh;
   background: #6b6cb1;
+  min-height: functions.get-vw(750px);
   & > img,
   & > video {
     position: absolute;
@@ -13,7 +14,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // z-index: -1;
     mix-blend-mode: luminosity;
   }
   .btn {
@@ -157,6 +157,7 @@
 
 @include mixins.mobile {
   .hero {
+    min-height: 460px;
     .btn {
       display: flex;
       margin-top: auto;

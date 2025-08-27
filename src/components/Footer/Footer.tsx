@@ -14,14 +14,14 @@ const Footer: FC = () => {
     const topTl = gsap.timeline({
       scrollTrigger: {
         trigger: `.${styles.top}`,
-        start: '60% bottom',
+        start: 'center bottom',
       },
     })
 
     const botTl = gsap.timeline({
       scrollTrigger: {
         trigger: `.${styles.bot}`,
-        start: '60% bottom',
+        start: 'center bottom',
       },
     })
 

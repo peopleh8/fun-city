@@ -20,7 +20,7 @@ const Hero: FC = () => {
   }, [])
 
   return (
-    <div className={styles.hero}>
+    <section className={styles.hero}>
       <video
         src='/hero.mp4'
         autoPlay
@@ -29,7 +29,7 @@ const Hero: FC = () => {
         preload='auto'
       />
       <HeroContent />
-    </div>
+    </section>
   )
 }
 

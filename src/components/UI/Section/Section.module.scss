@@ -15,13 +15,19 @@
     z-index: -2;
     top: 0;
     left: 50%;
-    width: 120%;
+    width: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
     background: #ceceff;
     filter: blur(404px);
     transform: translate3d(-50%, 0, 0);
   }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 }
 
 .type-1 {
@@ -58,9 +64,11 @@
     padding-top: 100px;
     padding-bottom: 100px;
     &::before {
-      width: 500%;
+      width: 100%;
+      height: 80%;
       left: 0;
-      transform: translate3d(-30%, 0, 0);
+      background: linear-gradient(180deg, #6a75de 0%, #6a75de 100%);
+      transform: translate3d(0, 0, 0);
     }
   }
 
