@@ -9,8 +9,8 @@ import styles from '@/components/Feature/Feature.module.scss'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const FeatureList: FC<FeatureListProps> = ({ direction = 'vertical', children }) => {
-  const classes = classNames(styles.list, styles[direction])
+const FeatureList: FC<FeatureListProps> = ({ direction = 'vertical', columns = 2, children }) => {
+  const classes = classNames(styles.list, styles[direction], styles[`columns-${columns}`])
 
   useEffect(() => {
     const items = gsap.utils.toArray<HTMLElement>(`.${styles.horizontal} .${styles.card}`)

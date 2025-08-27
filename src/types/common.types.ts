@@ -30,4 +30,5 @@ export interface SocialsProps {
 
 export interface FeatureListProps extends ChildProps {
   direction?: 'horizontal' | 'vertical'
+  columns?: number
 }

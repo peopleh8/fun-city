@@ -6,7 +6,13 @@ import classNames from 'classnames'
 import { useMediaQuery } from 'react-responsive'
 import styles from '@/screens/Home/components/Ecosystem/Ecosystem.module.scss'
 
-const EcosystemItem: FC = () => {
+interface EcosystemItemProps {
+  index: number
+  title: string
+  description: string
+}
+
+const EcosystemItem: FC<EcosystemItemProps> = ({ index, title, description }) => {
   const [isOpen, setOpen] = useState(true)
   const isMobile = useMediaQuery({ query: '(max-width: 1200px)' })
 
@@ -30,13 +36,13 @@ const EcosystemItem: FC = () => {
         className={styles.inner}
         onClick={toggleOpenHandler}
       >
-        <div className={styles.counter}>01</div>
-        <div className={styles.title}>Al and Web3 Power</div>
+        <div className={styles.counter}>{index < 10 ? `0${index + 1}` : index + 1}</div>
+        <div className={styles.title}>{title}</div>
       </div>
       <Collapse isOpened={isOpen}>
         <div className={styles.card}>
-          <div className={styles.cardCounter}>[ 02 ]</div>
-          <p className={styles.cardDesc}>Al, blockchain, and Web3 technologies empower our community and unlock new potential.</p>
+          <div className={styles.cardCounter}>{`[ ${index < 10 ? `0${index + 1}` : index + 1} ]`}</div>
+          <p className={styles.cardDesc}>{description}</p>
         </div>
       </Collapse>
     </div>

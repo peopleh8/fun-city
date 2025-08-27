@@ -1,20 +1,26 @@
 import { FC } from 'react'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import Icon from '@/components/UI/Icon/Icon'
 import styles from '@/screens/Home/components/Foundations/Foundations.module.scss'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/curved-arrow.svg'
-import cardPhoto from '@/assets/images/foundations-card-1.png'
 
-const FoundationsItem: FC = () => {
+interface FoundationsItemProps {
+  title: string
+  description: string
+  photo: StaticImageData | string
+  href: string
+}
+
+const FoundationsItem: FC<FoundationsItemProps> = ({ title, description, photo, href }) => {
   return (
     <Link
       className={styles.item}
-      href='#'
+      href={href}
     >
       <Image
-        src={cardPhoto}
-        alt='Foundations Card 1'
+        src={photo}
+        alt={title}
         width={930}
         height={843}
       />
@@ -23,9 +29,9 @@ const FoundationsItem: FC = () => {
           <Icon externalClassNames={styles.titleIcon}>
             <ArrowIcon />
           </Icon>
-          <div className={styles.titleText}>Products</div>
+          <div className={styles.titleText}>{title}</div>
         </div>
-        <p className={styles.desc}>Get clear definitions of the terms, systems, and symbols we use throughout the Library.</p>
+        <p className={styles.desc}>{description}</p>
       </div>
     </Link>
   )

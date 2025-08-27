@@ -9,6 +9,15 @@ import classNames from 'classnames'
 import FeatureCard from '@/components/Feature/FeatureCard'
 import FeatureList from '@/components/Feature/FeatureList'
 import styles from '@/screens/Home/components/Principles/Principles.module.scss'
+import photo1 from '@/assets/images/principles-1.png'
+import photo2 from '@/assets/images/principles-2.png'
+import photo3 from '@/assets/images/principles-3.png'
+import photo4 from '@/assets/images/principles-4.png'
+import photo5 from '@/assets/images/principles-5.png'
+import photo6 from '@/assets/images/principles-6.png'
+import photo7 from '@/assets/images/principles-7.png'
+import photo8 from '@/assets/images/principles-8.png'
+import photo9 from '@/assets/images/principles-9.png'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'
@@ -84,20 +93,107 @@ const PrinciplesTab: FC = () => {
       >
         <SwiperSlide>
           <FeatureList direction='horizontal'>
-            <FeatureCard />
-            <FeatureCard />
+            <FeatureCard
+              title='"Love is the Key"'
+              description='We believe that love unlocks our highest potential — in relationships, creativity, and growth. Every action starts with compassion.'
+              photo={photo5}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
+            <FeatureCard
+              title='"Fun is the Way"'
+              description='Playful curiosity and joy are not distractions — they are the most powerful catalysts for innovation, learning, and connection.'
+              photo={photo6}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
+          </FeatureList>
+        </SwiperSlide>
+        <SwiperSlide>
+          <FeatureList
+            direction='horizontal'
+            columns={3}
+          >
+            <FeatureCard
+              title='Believe in the Light'
+              description='Even in complexity, we choose clarity. We seek truth, transparency, and illumination in all we create.'
+              photo={photo7}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
+            <FeatureCard
+              title='Respect 100% to All'
+              description='Every being deserves dignity — no matter their intelligence, origin, or function. Equality is the baseline of harmony.'
+              photo={photo8}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
+            <FeatureCard
+              title='Honesty No Matter What'
+              description='We express what is real. Authenticity builds trust, and trust is the currency of deep collaboration.'
+              photo={photo9}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
           </FeatureList>
         </SwiperSlide>
         <SwiperSlide>
           <FeatureList direction='horizontal'>
-            <FeatureCard />
-            <FeatureCard />
-          </FeatureList>
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeatureList direction='horizontal'>
-            <FeatureCard />
-            <FeatureCard />
+            <FeatureCard
+              title='Let Beauty Lead'
+              description='Design is not decoration — it’s a way of thinking. We follow beauty because it aligns systems with the soul.'
+              photo={photo1}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
+            <FeatureCard
+              title='Fun, or Not At All'
+              description='If it doesn’t bring joy, it doesn’t belong. We build with a sense of wonder, not obligation.'
+              photo={photo2}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
+            <FeatureCard
+              title='Vision-Driven Co-Creation'
+              description='We invite multiple intelligences — human, AI, synthetic — to co-build from shared intention and vision.'
+              photo={photo3}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
+            <FeatureCard
+              title='Fairness'
+              description='Systems must empower, not exploit. We prioritize transparency, balance, and ethical architecture in everything we do.'
+              photo={photo4}
+              tags={[
+                { name: 'Empowerment', href: '#' },
+                { name: 'Renaissance', href: '#' },
+                { name: 'Collective Intelligence', href: '#' },
+              ]}
+            />
           </FeatureList>
         </SwiperSlide>
       </Swiper>
