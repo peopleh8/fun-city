@@ -49,7 +49,7 @@ const HeroNav: FC = () => {
           onClick={anchorHandle}
         >
           <Icon externalClassNames={styles.navIcon}>
-            <NavIcon2 />
+            <NavIcon3 />
           </Icon>
           <span className={styles.navText}>Principles</span>
         </a>
@@ -59,7 +59,7 @@ const HeroNav: FC = () => {
           onClick={anchorHandle}
         >
           <Icon externalClassNames={styles.navIcon}>
-            <NavIcon3 />
+            <NavIcon2 />
           </Icon>
           <span className={styles.navText}>Ecosystem</span>
         </a>
