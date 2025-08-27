@@ -1,0 +1,28 @@
+@use '../../../styles/helpers/functions';
+@use '../../../styles/helpers/mixins';
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(#000, 0.4);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: auto;
+  padding: functions.get-vw(20px);
+  transition: all 0.3s ease;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@include mixins.mobile {
+  .modal {
+    padding: 20px 16px;
+  }
+}

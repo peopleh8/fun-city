@@ -6,11 +6,12 @@ import { ButtonProps } from '@/types/ui.types'
 import styles from '@/components/UI/Button/Button.module.scss'
 
 const Button: FC<ButtonProps> = (props) => {
-  const { text, view = 'button', variant = 'contained', theme = 'dark', size = 'default', active, disabled, startIcon, endIcon, externalClassNames } = props
+  const { text, view = 'button', variant = 'contained', theme = 'dark', size = 'default', active, loading, disabled, startIcon, endIcon, externalClassNames } = props
 
   const classes = classNames(styles.btn, styles[view], styles[variant], styles[theme], styles[size], externalClassNames, {
     [styles.active]: active,
     [styles.disabled]: disabled,
+    [styles.loading]: loading,
   })
 
   if (props.component === 'link') {

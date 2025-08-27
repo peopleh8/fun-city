@@ -1,7 +1,9 @@
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import Icon from '@/components/UI/Icon/Icon'
+import { useTypedDispatch } from '@/hooks/use-typed-dispatch'
+import { setSubscribeModalOpen } from '@/store/reducers/app.slice'
 import styles from '@/screens/Home/components/Foundations/Foundations.module.scss'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/curved-arrow.svg'
 
@@ -13,10 +15,19 @@ interface FoundationsItemProps {
 }
 
 const FoundationsItem: FC<FoundationsItemProps> = ({ title, description, photo, href }) => {
+  const dispatck = useTypedDispatch()
+
+  const openSubscribeModalHandler = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+
+    dispatck(setSubscribeModalOpen(true))
+  }
+
   return (
     <Link
       className={styles.item}
       href={href}
+      onClick={openSubscribeModalHandler}
     >
       <Image
         src={photo}

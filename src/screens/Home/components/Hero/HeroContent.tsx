@@ -8,9 +8,7 @@ import Button from '@/components/UI/Button/Button'
 import { useTypedSelector } from '@/hooks/use-typed-selector'
 import styles from '@/screens/Home/components/Hero/Hero.module.scss'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-right.svg'
-import discord from '@/assets/icons/discord.svg'
-import linkedIn from '@/assets/icons/linked-in.svg'
-import x from '@/assets/icons/x.svg'
+import instagram from '@/assets/icons/instagram.svg'
 
 const HeroContent: FC = () => {
   const { isMenuOpen } = useTypedSelector((state) => state.app)
@@ -47,11 +45,7 @@ const HeroContent: FC = () => {
               <div className={styles.panelTitle}>Socials</div>
               <Socials
                 position='menu'
-                list={[
-                  { id: 1, icon: discord, link: '/' },
-                  { id: 2, icon: linkedIn, link: '/' },
-                  { id: 3, icon: x, link: '/' },
-                ]}
+                list={[{ id: 1, icon: instagram, link: 'https://www.instagram.com/longfengartcar/' }]}
               />
             </div>
           </div>

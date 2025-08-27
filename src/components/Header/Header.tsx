@@ -1,21 +1,28 @@
 'use client'
 
-import { FC, useEffect, useRef } from 'react'
+import { FC, useCallback, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Logo from '@/components/Logo/Logo'
 import Icon from '@/components/UI/Icon/Icon'
 import Button from '@/components/UI/Button/Button'
 import Burger from '@/components/Burger/Burger'
 import { useTypedSelector } from '@/hooks/use-typed-selector'
+import { useTypedDispatch } from '@/hooks/use-typed-dispatch'
+import { setSubscribeModalOpen } from '@/store/reducers/app.slice'
 import styles from '@/components/Header/Header.module.scss'
 import { ReactComponent as DecIcon } from '@/assets/icons/header-dec.svg'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-right.svg'
 
 const Header: FC = () => {
+  const dispatck = useTypedDispatch()
   const { isMenuOpen } = useTypedSelector((state) => state.app)
 
   const headerRef = useRef<HTMLDivElement>(null)
   let lastScrollY = 0
+
+  const openSubscribeModalHandler = useCallback(() => {
+    dispatck(setSubscribeModalOpen(true))
+  }, [dispatck])
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY
@@ -55,7 +62,7 @@ const Header: FC = () => {
       <Button
         text='Discover More'
         endIcon={<ArrowIcon />}
-        onClick={() => {}}
+        onClick={openSubscribeModalHandler}
         externalClassNames={styles.btn}
       />
       <Burger />

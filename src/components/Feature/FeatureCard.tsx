@@ -1,7 +1,9 @@
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/UI/Button/Button'
+import { useTypedDispatch } from '@/hooks/use-typed-dispatch'
+import { setSubscribeModalOpen } from '@/store/reducers/app.slice'
 import styles from '@/components/Feature/Feature.module.scss'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-right.svg'
 
@@ -14,6 +16,14 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: FC<FeatureCardProps> = ({ title, description, tags, photo, link }) => {
+  const dispatck = useTypedDispatch()
+
+  const openSubscribeModalHandler = (e?: MouseEvent<HTMLAnchorElement>) => {
+    e?.preventDefault()
+
+    dispatck(setSubscribeModalOpen(true))
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.content}>
@@ -25,6 +35,7 @@ const FeatureCard: FC<FeatureCardProps> = ({ title, description, tags, photo, li
                   key={`${tag.href}+${tag.name}`}
                   href={tag.href}
                   className={styles.tag}
+                  onClick={openSubscribeModalHandler}
                 >
                   {tag.name}
                 </Link>
@@ -39,10 +50,10 @@ const FeatureCard: FC<FeatureCardProps> = ({ title, description, tags, photo, li
             text={link.name}
             endIcon={<ArrowIcon />}
             theme='dark'
-            component='link'
+            component='button'
             variant='outlined'
-            href={link.href}
             externalClassNames={styles.btn}
+            onClick={openSubscribeModalHandler}
           />
         )}
       </div>

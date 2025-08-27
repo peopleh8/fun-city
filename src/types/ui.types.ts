@@ -28,6 +28,7 @@ type BaseButtonProps = {
   variant?: 'contained' | 'outlined'
   theme?: 'dark' | 'light'
   size?: 'default' | 'small'
+  loading?: boolean
   disabled?: boolean
   active?: boolean
   externalClassNames?: ExternalClassNamesType
@@ -146,4 +147,9 @@ export interface SectionProps extends ChildProps {
   size?: 'xl' | 'lg' | 'md' | 'sm'
   inlineType?: 'type-1' | 'type-2' | 'type-3'
   externalClassNames?: ExternalClassNamesType
+}
+
+export interface ModalProps extends ChildProps {
+  open: boolean
+  onClose: () => void
 }

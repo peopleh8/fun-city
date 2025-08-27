@@ -2,8 +2,11 @@
 
 import { FC, useEffect } from 'react'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import HeroContent from '@/screens/Home/components/Hero/HeroContent'
 import styles from '@/screens/Home/components/Hero/Hero.module.scss'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Hero: FC = () => {
   useEffect(() => {
@@ -15,6 +18,7 @@ const Hero: FC = () => {
       stagger: 0.1,
       onComplete: () => {
         gsap.set(`.${styles.inner} > *`, { transition: '' })
+        ScrollTrigger.refresh()
       },
     })
   }, [])

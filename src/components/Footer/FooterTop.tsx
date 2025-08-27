@@ -5,13 +5,14 @@ import Button from '@/components/UI/Button/Button'
 import FooterItem from '@/components/Footer/FooterItem'
 import NavBar from '@/components/NavBar/NavBar'
 import Socials from '@/components/Socials/Socials'
+import { useTypedSelector } from '@/hooks/use-typed-selector'
 import { FormValues } from '@/types/ui.types'
 import styles from '@/components/Footer/Footer.module.scss'
-import discord from '@/assets/icons/discord.svg'
-import linkedIn from '@/assets/icons/linked-in.svg'
-import x from '@/assets/icons/x.svg'
+import instagram from '@/assets/icons/instagram.svg'
 
 const FooterTop: FC = () => {
+  const { isSubscribing } = useTypedSelector((state) => state.app)
+
   const handleSubmit = useCallback((data: FormValues) => {
     console.log(data)
   }, [])
@@ -40,6 +41,7 @@ const FooterTop: FC = () => {
               theme='light'
               size='small'
               onClick={() => {}}
+              loading={isSubscribing}
               externalClassNames={styles.btn}
             />
           </Form>
@@ -76,11 +78,7 @@ const FooterTop: FC = () => {
           <FooterItem title='Socials'>
             <Socials
               position='footer'
-              list={[
-                { id: 1, icon: discord, link: '/' },
-                { id: 2, icon: linkedIn, link: '/' },
-                { id: 3, icon: x, link: '/' },
-              ]}
+              list={[{ id: 1, icon: instagram, link: 'https://www.instagram.com/longfengartcar/' }]}
             />
           </FooterItem>
         </div>

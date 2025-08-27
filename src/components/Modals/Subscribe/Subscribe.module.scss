@@ -1,0 +1,80 @@
+@use '../../../styles/helpers/functions';
+@use '../../../styles/helpers/mixins';
+
+.subscribe {
+  background: var(--white-color);
+  border-radius: functions.get-vw(30px);
+  padding: functions.get-vw(40px);
+  max-width: functions.get-vw(640px);
+}
+
+.title {
+  font-weight: 700;
+  font-size: functions.get-vw(32px);
+  line-height: functions.get-vw(38px);
+  margin-bottom: functions.get-vw(16px);
+}
+
+.desc {
+  font-size: functions.get-vw(18px);
+  line-height: 120%;
+  margin-bottom: functions.get-vw(26px);
+  opacity: 0.8;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: functions.get-vw(14px) functions.get-vw(12px);
+}
+
+.input {
+  flex: 1;
+}
+
+.btn {
+  border-radius: functions.get-vw(23px);
+}
+
+.message {
+  width: 100%;
+  opacity: 0.8;
+}
+
+@include mixins.mobile {
+  .subscribe {
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+
+  .desc {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .form {
+    gap: 18px;
+  }
+
+  .input {
+    flex: none;
+    width: 100%;
+  }
+
+  .btn {
+    border-radius: 23px;
+    width: 100%;
+    height: 66px;
+  }
+
+  .message {
+    margin-top: -8px;
+  }
+}
