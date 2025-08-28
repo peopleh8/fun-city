@@ -26,12 +26,14 @@
   font-weight: 700;
   font-size: functions.get-vw(32px);
   line-height: functions.get-vw(38px);
+  letter-spacing: 0.3px;
 }
 
 .desc {
   font-size: functions.get-vw(18px);
   line-height: 120%;
   opacity: 0.8;
+  letter-spacing: 0.3px;
 }
 
 @include mixins.mobile {
@@ -43,12 +45,10 @@
     font-size: 28px;
     line-height: 32px;
     margin-bottom: 16px;
-    letter-spacing: 1px;
   }
 
   .desc {
     font-size: 14px;
     margin-bottom: 24px;
-    letter-spacing: 1px;
   }
 }
