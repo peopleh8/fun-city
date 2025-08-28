@@ -21,8 +21,62 @@
   }
 }
 
+.content {
+  position: relative;
+}
+
+.times {
+  position: absolute;
+  right: functions.get-vw(15px);
+  top: functions.get-vw(15px);
+  width: functions.get-vw(30px);
+  height: functions.get-vw(30px);
+  border-radius: 50%;
+  transition: background var(--default-transition) ease;
+  span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    height: functions.get-vw(2px);
+    background: var(--black-color);
+    transition: background var(--default-transition) ease;
+    &:first-child {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:last-child {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  @include mixins.desktop-hoverable {
+    &:hover {
+      background: var(--black-color);
+      span {
+        background: var(--white-color);
+      }
+    }
+  }
+  @include mixins.mobile-pressable {
+    &:active {
+      background: var(--black-color);
+      span {
+        background: var(--white-color);
+      }
+    }
+  }
+}
+
 @include mixins.mobile {
   .modal {
     padding: 20px 16px;
+  }
+  .times {
+    right: 15px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    span {
+      height: 2px;
+    }
   }
 }
