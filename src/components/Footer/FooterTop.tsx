@@ -30,8 +30,8 @@ const FooterTop: FC = () => {
       <div className={styles.topInner}>
         <div className={classNames(styles.topSide, { [styles.sent]: isSubscribingSuccess })}>
           <Message
-            title='Thank you for subscribing!'
-            description='You have successfully subscribed to our newsletter.'
+            title='Welcome to Fun City'
+            description='You’re subscribed. We’ll share new releases, product updates, and event invitations as they drop.'
             theme='light'
             externalClassNames={styles.message}
           />

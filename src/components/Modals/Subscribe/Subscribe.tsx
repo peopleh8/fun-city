@@ -27,8 +27,8 @@ const Subscribe: FC = () => {
     <div className={styles.subscribe}>
       <div className={classNames(styles.wrapper, { [styles.sent]: isSubscribingSuccess })}>
         <Message
-          title='Thank you for subscribing!'
-          description='You have successfully subscribed to our newsletter.'
+          title='Welcome to Fun City'
+          description='You’re subscribed. We’ll share new releases, product updates, and event invitations as they drop.'
           externalClassNames={styles.message}
         />
         <div className={styles.inner}>

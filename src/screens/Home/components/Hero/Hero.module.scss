@@ -229,13 +229,13 @@
     background: none;
     backdrop-filter: none;
     border-radius: 0;
-    padding-right: 26px;
   }
   .navInner {
     padding: 0;
     background: none;
     gap: 5px;
     flex-wrap: wrap;
+    max-width: 300px;
   }
   .navItem {
     background: var(--white-color);
