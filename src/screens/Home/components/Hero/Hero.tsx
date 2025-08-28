@@ -27,6 +27,7 @@ const Hero: FC = () => {
         loop
         muted
         preload='auto'
+        playsInline
       />
       <HeroContent />
     </section>
