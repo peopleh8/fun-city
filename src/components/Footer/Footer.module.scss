@@ -37,6 +37,7 @@
 }
 
 .topSide {
+  position: relative;
   &:first-child {
     max-width: functions.get-vw(450px);
     width: 100%;
@@ -46,6 +47,23 @@
     flex-wrap: wrap;
     gap: functions.get-vw(80px);
   }
+  &.sent {
+    .topSideInner {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    .message {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition-delay: 0.25s;
+    }
+  }
+}
+
+.topSideInner {
+  transition: all 0.3s ease 0s;
 }
 
 .item {
@@ -116,6 +134,17 @@
   line-height: functions.get-vw(94px);
   letter-spacing: calc(functions.get-vw(2px) * -1);
   color: var(--white-color);
+}
+
+.message {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
 }
 
 @include mixins.mobile {

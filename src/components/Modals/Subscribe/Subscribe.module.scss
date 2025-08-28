@@ -8,6 +8,27 @@
   max-width: functions.get-vw(640px);
 }
 
+.wrapper {
+  position: relative;
+  &.sent {
+    .inner {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    .message {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition-delay: 0.25s;
+    }
+  }
+}
+
+.inner {
+  transition: all 0.3s ease 0s;
+}
+
 .title {
   font-weight: 700;
   font-size: functions.get-vw(32px);
@@ -36,9 +57,25 @@
   border-radius: functions.get-vw(23px);
 }
 
-.message {
+.text {
   width: 100%;
   opacity: 0.8;
+}
+
+.formWrapper {
+  position: relative;
+}
+
+.message {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
 }
 
 @include mixins.mobile {
@@ -74,7 +111,7 @@
     height: 66px;
   }
 
-  .message {
+  .text {
     margin-top: -8px;
   }
 }

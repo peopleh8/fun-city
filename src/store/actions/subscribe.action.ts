@@ -6,9 +6,11 @@ export const subscribe = (email: string) => async (dispatch: AppDispatch) => {
   try {
     dispatch(setSubscribing(true))
 
-    const response = await unauthorizedAxios.post('/subscribe', { email })
+    const response = await unauthorizedAxios.post('/applications', { data: { Email: email } })
 
-    if (response.status === 200) {
+    console.log(response)
+
+    if (response.status >= 200 && response.status < 300) {
       dispatch(setSubscribingSuccess(true))
     }
   } catch (e) {

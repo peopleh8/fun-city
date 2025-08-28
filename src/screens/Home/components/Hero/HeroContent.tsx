@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
 import classNames from 'classnames'
 import HeroNav from '@/screens/Home/components/Hero/HeroNav'
 import Socials from '@/components/Socials/Socials'
@@ -6,12 +6,19 @@ import Title from '@/components/UI/Title/Title'
 import Subtitle from '@/components/UI/Subtitle/Subtitle'
 import Button from '@/components/UI/Button/Button'
 import { useTypedSelector } from '@/hooks/use-typed-selector'
+import { useTypedDispatch } from '@/hooks/use-typed-dispatch'
+import { setSubscribeModalOpen } from '@/store/reducers/app.slice'
 import styles from '@/screens/Home/components/Hero/Hero.module.scss'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-right.svg'
 import instagram from '@/assets/icons/instagram.svg'
 
 const HeroContent: FC = () => {
+  const dispatch = useTypedDispatch()
   const { isMenuOpen } = useTypedSelector((state) => state.app)
+
+  const openSubscribeModalHandler = useCallback(() => {
+    dispatch(setSubscribeModalOpen(true))
+  }, [dispatch])
 
   return (
     <div className={styles.content}>
@@ -53,7 +60,7 @@ const HeroContent: FC = () => {
         <Button
           text='Discover More'
           endIcon={<ArrowIcon />}
-          onClick={() => {}}
+          onClick={openSubscribeModalHandler}
           externalClassNames={styles.btn}
         />
       </div>

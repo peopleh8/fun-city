@@ -14,15 +14,15 @@ import { ReactComponent as DecIcon } from '@/assets/icons/header-dec.svg'
 import { ReactComponent as ArrowIcon } from '@/assets/icons/arrow-right.svg'
 
 const Header: FC = () => {
-  const dispatck = useTypedDispatch()
+  const dispatch = useTypedDispatch()
   const { isMenuOpen } = useTypedSelector((state) => state.app)
 
   const headerRef = useRef<HTMLDivElement>(null)
   let lastScrollY = 0
 
   const openSubscribeModalHandler = useCallback(() => {
-    dispatck(setSubscribeModalOpen(true))
-  }, [dispatck])
+    dispatch(setSubscribeModalOpen(true))
+  }, [dispatch])
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY

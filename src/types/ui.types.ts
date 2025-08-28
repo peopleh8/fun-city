@@ -153,3 +153,10 @@ export interface ModalProps extends ChildProps {
   open: boolean
   onClose: () => void
 }
+
+export interface MessageProps {
+  title: string
+  description?: string
+  theme?: 'dark' | 'light'
+  externalClassNames?: ExternalClassNamesType
+}
