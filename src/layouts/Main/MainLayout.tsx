@@ -2,6 +2,7 @@
 
 import React, { FC, useCallback } from 'react'
 import { ChildProps } from '@/types/common.types'
+import PageLoader from '@/components/PageLoader/PageLoader'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import Modal from '@/components/UI/Modal/Modal'
@@ -21,6 +22,7 @@ const MainLayout: FC<ChildProps> = ({ children }) => {
 
   return (
     <div className={styles.wrapper}>
+      <PageLoader />
       <Header />
       <main className={styles.main}>{children}</main>
       <Footer />

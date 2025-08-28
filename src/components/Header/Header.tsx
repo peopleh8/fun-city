@@ -37,7 +37,7 @@ const Header: FC = () => {
   }
 
   useEffect(() => {
-    gsap.to(`.${styles.header}`, 0.6, { opacity: 1, delay: 0.3 })
+    gsap.to(`.${styles.header}`, 0.6, { opacity: 1, delay: 2.5 })
 
     if (isMenuOpen) {
       return
